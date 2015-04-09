@@ -1,9 +1,9 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
-import java.util.List;
-
 import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
+
+import java.util.List;
 
 /**
  * Created by Oleg on 09.04.2015.

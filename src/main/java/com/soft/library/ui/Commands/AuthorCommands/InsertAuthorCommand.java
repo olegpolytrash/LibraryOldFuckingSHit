@@ -1,9 +1,9 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
-import java.util.Scanner;
-
 import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
+
+import java.util.Scanner;
 
 /**
  * Created by Oleg on 09.04.2015.
