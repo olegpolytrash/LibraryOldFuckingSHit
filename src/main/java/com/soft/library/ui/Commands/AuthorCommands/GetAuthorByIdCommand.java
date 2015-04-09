@@ -13,7 +13,6 @@ public class GetAuthorByIdCommand implements ICommand {
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         Author.selectById(scanner.next());
-        scanner.close();
     }
 
     @Override

@@ -13,7 +13,6 @@ public class DeleteAuthorCommand implements ICommand {
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         Author.removeById(scanner.next());
-        scanner.close();
     }
 
     @Override

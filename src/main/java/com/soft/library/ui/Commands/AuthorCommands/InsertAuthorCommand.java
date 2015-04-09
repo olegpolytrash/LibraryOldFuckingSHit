@@ -13,8 +13,7 @@ public class InsertAuthorCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        Author.insert(scanner.next());
-        scanner.close();
+        Author.insert(scanner.nextLine());
     }
 
     @Override
