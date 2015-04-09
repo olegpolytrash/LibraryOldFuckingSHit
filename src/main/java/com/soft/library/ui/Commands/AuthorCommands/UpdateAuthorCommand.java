@@ -1,5 +1,8 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
+import java.util.Scanner;
+
+import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -8,7 +11,9 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class UpdateAuthorCommand implements ICommand {
     @Override
     public void execute() {
-
+        Scanner scanner = new Scanner(System.in);
+        Author.updateAuthorName(scanner.next(), scanner.next());
+        scanner.close();
     }
 
     @Override

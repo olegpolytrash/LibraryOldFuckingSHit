@@ -1,5 +1,8 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
+import java.util.List;
+
+import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -8,7 +11,10 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetAllAuthorsCommand implements ICommand {
     @Override
     public void execute() {
-        // TODO: add implementation
+        List<String> authors = Author.selectAll();
+        for(String i : authors){
+            System.out.println(i);
+        }
     }
 
     @Override

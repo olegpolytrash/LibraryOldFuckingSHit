@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * Created by Oleg on 09.04.2015.
  */
 public class DBConnection {
-
+//hewwwllsldkfajsld;flicxo[ai
     public static Connection getConnection() {
         String dbClass = "com.mysql.jdbc.Driver";
         Connection conn = null;
@@ -34,6 +34,5 @@ public class DBConnection {
         } catch (SQLException se) {
             se.printStackTrace();
         }
-
     }
 }

@@ -1,5 +1,7 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
+import java.util.Scanner;
+
 import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
 
@@ -10,7 +12,9 @@ public class InsertAuthorCommand implements ICommand {
 
     @Override
     public void execute() {
-        Author.insert("123");
+        Scanner scanner = new Scanner(System.in);
+        Author.insert(scanner.next());
+        scanner.close();
     }
 
     @Override
