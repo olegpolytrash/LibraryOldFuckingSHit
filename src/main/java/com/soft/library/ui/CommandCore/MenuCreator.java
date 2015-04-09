@@ -20,15 +20,12 @@ public class MenuCreator {
     }
 
     private void printEntryMessages() {
-        System.out.println("Please enter which type of program you would like" +
-                " to invoke:\n");
-
         StringBuilder messageBuilder = new StringBuilder();
         for (Map.Entry<Integer, ICommand> pair : commandCollection.getCommands()) {
             messageBuilder.append(pair.getKey());
             messageBuilder.append(": ");
             messageBuilder.append(pair.getValue().getName());
-            messageBuilder.append("\n---------------------\n");
+            messageBuilder.append("\n");
         }
 
         System.out.println(messageBuilder);

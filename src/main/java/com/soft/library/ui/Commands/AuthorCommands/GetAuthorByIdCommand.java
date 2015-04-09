@@ -1,4 +1,4 @@
-package com.soft.library.ui.Commands;
+package com.soft.library.ui.Commands.AuthorCommands;
 
 import com.soft.library.ui.CommandCore.ICommand;
 

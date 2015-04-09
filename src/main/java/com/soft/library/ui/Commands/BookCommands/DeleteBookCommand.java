@@ -1,18 +1,18 @@
-package com.soft.library.ui.Commands;
+package com.soft.library.ui.Commands.BookCommands;
 
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
  * Created by Oleg on 09.04.2015.
  */
-public class GetAllAuthorsCommand implements ICommand {
+public class DeleteBookCommand implements ICommand {
     @Override
     public void execute() {
-        // TODO: add implementation
+
     }
 
     @Override
     public String getName() {
-        return "Get all authors";
+        return "Delete author";
     }
 }
