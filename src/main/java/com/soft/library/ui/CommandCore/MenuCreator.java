@@ -40,7 +40,7 @@ public class MenuCreator {
             messageBuilder.append(pair.getKey());
             messageBuilder.append(": ");
             messageBuilder.append(pair.getValue().getName());
-            messageBuilder.append("\n");
+            messageBuilder.append(System.lineSeparator());
         }
 
         System.out.println(messageBuilder);
