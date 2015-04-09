@@ -11,7 +11,7 @@ public class Author {
     static final String TABLE = "Author";
 
     public static boolean insert(String name) {
-        String sql = "INSERT INTO " + TABLE + " name (" + name + ")";
+        String sql = "INSERT INTO " + TABLE + "(name) values (" + name + ")";
         return executeCommand(sql);
     }
 
