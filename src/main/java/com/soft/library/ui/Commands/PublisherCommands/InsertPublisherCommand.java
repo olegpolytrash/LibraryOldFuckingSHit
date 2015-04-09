@@ -1,6 +1,8 @@
 package com.soft.library.ui.Commands.PublisherCommands;
 
-import com.soft.library.data.Author;
+import java.util.Scanner;
+
+import com.soft.library.data.Publisher;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -10,11 +12,13 @@ public class InsertPublisherCommand implements ICommand {
 
     @Override
     public void execute() {
-        Author.insert("123");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type a publisher name: ");
+        Publisher.insert(scanner.nextLine());
     }
 
     @Override
     public String getName() {
-        return "Insert an author";
+        return "Insert an publisher";
     }
 }

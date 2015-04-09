@@ -1,5 +1,8 @@
 package com.soft.library.ui.Commands.PublisherCommands;
 
+import java.util.List;
+
+import com.soft.library.data.Publisher;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -8,11 +11,14 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetAllPublishersCommand implements ICommand {
     @Override
     public void execute() {
-        // TODO: add implementation
+        List<String> publisher = Publisher.selectAll();
+        for(String i : publisher){
+            System.out.println(i);
+        }
     }
 
     @Override
     public String getName() {
-        return "Get all authors";
+        return "Get all publishers";
     }
 }
