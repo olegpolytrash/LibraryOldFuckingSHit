@@ -7,7 +7,7 @@ import java.sql.*;
  */
 public class DBConnection {
     public Connection getConnection() {
-return null;
+        return null;
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
