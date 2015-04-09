@@ -1,7 +1,7 @@
 package com.soft.library.ui.CommandCore;
 
 /**
- * Created by Oleg on 09.04.2015.
+ * Marker interface for every menu option that shows a new menu if selected.
  */
 public interface IMenu extends IMenuOption {
 }
