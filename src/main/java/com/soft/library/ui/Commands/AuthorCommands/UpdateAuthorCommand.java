@@ -12,8 +12,10 @@ public class UpdateAuthorCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        Author.updateAuthorName(scanner.next(), scanner.next());
-        scanner.close();
+        int id = scanner.nextInt();
+        String name = scanner.next();
+        Author.updateAuthorName(id, name);
+//        scanner.close();
     }
 
     @Override

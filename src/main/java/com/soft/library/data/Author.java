@@ -20,8 +20,8 @@ public class Author {
         return executeCommand(sql);
     }
 
-    public static boolean updateAuthorName(String id, String name) {
-        String sql = "UPDATE " + TABLE + "SET name = " + name + " WHERE id = "
+    public static boolean updateAuthorName(int id, String name) {
+        String sql = "UPDATE " + TABLE + " SET name = \'" + name + "\' WHERE id = "
                 + id;
         return executeCommand(sql);
     }
