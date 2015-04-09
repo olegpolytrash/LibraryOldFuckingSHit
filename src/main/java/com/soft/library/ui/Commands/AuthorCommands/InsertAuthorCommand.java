@@ -10,11 +10,10 @@ public class InsertAuthorCommand implements ICommand {
 
     @Override
     public void execute() {
-<<<<<<< HEAD
+
         Author.insert("petjka");
-=======
+
         Author.insert("123");
->>>>>>> branch 'master' of https://github.com/olegpolytrash/Library.git
     }
 
     @Override
