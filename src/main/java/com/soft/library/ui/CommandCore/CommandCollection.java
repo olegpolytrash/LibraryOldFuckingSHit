@@ -9,13 +9,13 @@ import java.util.TreeMap;
  */
 public class CommandCollection {
 
-    private Map<Integer, ICommand> menu = new TreeMap<>();
+    private Map<Integer, IMenuOption> menu = new TreeMap<>();
 
-    public void addTask(ICommand task) {
+    public void addTask(IMenuOption task) {
         menu.put(menu.size() + 1, task);
     }
 
-    public Set<Map.Entry<Integer, ICommand>> getCommands() {
+    public Set<Map.Entry<Integer, IMenuOption>> getCommands() {
         return menu.entrySet();
     }
 
@@ -23,7 +23,7 @@ public class CommandCollection {
         return menu.entrySet().size();
     }
 
-    public ICommand getByIndex(int index) {
+    public IMenuOption getByIndex(int index) {
         return menu.get(index);
     }
 }

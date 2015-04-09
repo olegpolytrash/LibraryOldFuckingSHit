@@ -8,8 +8,8 @@ import java.util.Scanner;
  */
 public class MenuCreator {
     class Switcher {
-        public void executeCommand(final ICommand command) {
-            command.execute();
+        public void executeCommand(final IMenuOption menuOption) {
+            menuOption.execute();
         }
     }
 
@@ -21,7 +21,7 @@ public class MenuCreator {
 
     private void printEntryMessages() {
         StringBuilder messageBuilder = new StringBuilder();
-        for (Map.Entry<Integer, ICommand> pair : commandCollection.getCommands()) {
+        for (Map.Entry<Integer, IMenuOption> pair : commandCollection.getCommands()) {
             messageBuilder.append(pair.getKey());
             messageBuilder.append(": ");
             messageBuilder.append(pair.getValue().getName());
