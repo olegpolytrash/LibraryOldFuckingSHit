@@ -1,5 +1,8 @@
 package com.soft.library.ui.CommandCore;
 
+import com.soft.library.ui.Commands.ExitMenuCommand;
+
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -7,16 +10,28 @@ import java.util.Scanner;
  * Class which create program menu.
  */
 public class MenuCreator {
-    class Switcher {
-        public void executeCommand(final IMenuOption menuOption) {
-            menuOption.execute();
-        }
-    }
-
     private CommandCollection commandCollection = new CommandCollection();
 
     public MenuCreator(CommandCollection commandCollection) {
         this.setCommandCollection(commandCollection);
+        addExitMenuOptionIfAbsent();
+    }
+
+    private void addExitMenuOptionIfAbsent() {
+        Iterator<Map.Entry<Integer, IMenuOption>> iterator = commandCollection.getCommands().iterator();
+
+        boolean contains = false;
+
+        while (iterator.hasNext()) {
+            if (iterator.next().getValue() instanceof ExitMenuCommand) {
+                contains = true;
+                break;
+            }
+        }
+
+        if (!contains) {
+           commandCollection.addTask(new ExitMenuCommand());
+        }
     }
 
     private void printEntryMessages() {
@@ -33,23 +48,25 @@ public class MenuCreator {
 
     public void runApplication() {
         Scanner scanner = new Scanner(System.in);
-        Switcher switcher = new Switcher();
-        printEntryMessages();
 
-        boolean ok = true;
-        while (ok) {
+        while (true) {
+            printEntryMessages();
             int programType = scanner.nextInt();
+
             if (programType > 0 && programType < (commandCollection.getSize() + 1)) {
-                switcher.executeCommand(commandCollection.getByIndex(programType));
-                ok = false;
+                IMenuOption menuOption = commandCollection.getByIndex(programType);
+
+                if (menuOption instanceof ExitMenuCommand) {
+                    break;
+                } else {
+                    menuOption.execute();
+                }
+
+                printEntryMessages();
             } else {
                 System.out.println("Please enter 1-" + commandCollection.getSize());
             }
         }
-    }
-
-    public CommandCollection getCommandCollection() {
-        return commandCollection;
     }
 
     public void setCommandCollection(CommandCollection commandCollection) {
