@@ -1,5 +1,6 @@
 package com.soft.library.ui.Commands.AuthorCommands;
 
+import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -9,11 +10,11 @@ public class InsertAuthorCommand implements ICommand {
 
     @Override
     public void execute() {
-
+        Author.insert("petjka");
     }
 
     @Override
     public String getName() {
-        return "Delete an author";
+        return "Insert an author";
     }
 }
