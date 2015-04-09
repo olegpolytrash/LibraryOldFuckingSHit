@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 /**
- * Class for managing collections of commands.
+ * Created by Oleg on 09.04.2015.
  */
 public class CommandCollection {
 
