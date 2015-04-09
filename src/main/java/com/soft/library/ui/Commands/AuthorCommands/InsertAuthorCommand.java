@@ -13,6 +13,7 @@ public class InsertAuthorCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Type in Author's name: ");
         Author.insert(scanner.nextLine());
     }
 

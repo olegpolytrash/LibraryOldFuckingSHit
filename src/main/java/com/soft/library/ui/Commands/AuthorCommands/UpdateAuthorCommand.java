@@ -12,8 +12,10 @@ public class UpdateAuthorCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        int id = scanner.nextInt();
+        System.out.println("Type in Author's id, name: ");
         String name = scanner.nextLine();
+        String id = name.substring(0, name.indexOf(','));
+        name = name.substring(name.indexOf(' ')).trim();
         Author.updateAuthorName(id, name);
     }
 

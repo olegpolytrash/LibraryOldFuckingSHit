@@ -15,18 +15,18 @@ public class ExecuteTables {
         return executeCommand(sql);
     }
 
-    public static boolean removeById(String id, String TABLE) {
+    public static boolean removeById(int id, String TABLE) {
         String sql = "DELETE FROM " + TABLE + " WHERE id = " + id;
         return executeCommand(sql);
     }
 
-    public static boolean updateAuthorName(int id, String name, String TABLE) {
+    public static boolean updateAuthorName(String id, String name, String TABLE) {
         String sql = "UPDATE " + TABLE + " SET name = \'" + name + "\' WHERE id = "
                 + id;
         return executeCommand(sql);
     }
 
-    public static List<String> selectById(String id, String TABLE) {
+    public static List<String> selectById(int id, String TABLE) {
         String sql = "SELECT " + id + " FROM " + TABLE + " WHERE ID = " + id;
         return executeGet(sql);
     }

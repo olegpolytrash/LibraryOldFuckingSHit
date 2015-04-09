@@ -1,5 +1,8 @@
 package com.soft.library.ui.Commands.BookCommands;
 
+import java.util.List;
+
+import com.soft.library.data.Book;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -8,11 +11,14 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetAllBooksCommand implements ICommand {
     @Override
     public void execute() {
-        // TODO: add implementation
+        List<String> books = Book.selectAll();
+        for(String i : books){
+            System.out.println(i);
+        }
     }
 
     @Override
     public String getName() {
-        return "Get all authors";
+        return "Get all Books";
     }
 }

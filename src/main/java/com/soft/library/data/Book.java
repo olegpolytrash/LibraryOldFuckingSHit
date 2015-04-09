@@ -2,8 +2,8 @@ package com.soft.library.data;
 
 import java.util.List;
 
-public class Author {
-    static final String TABLE = "Author";
+public class Book {
+    static final String TABLE = "Book";
 
     public static boolean insert(String name) {
         return ExecuteTables.insert(name, TABLE);
@@ -20,6 +20,7 @@ public class Author {
     public static List<String> selectById(int id) {
         return ExecuteTables.selectById(id, TABLE);
     }
+
     public static List<String> selectAll() {
         return ExecuteTables.selectAll(TABLE);
     }

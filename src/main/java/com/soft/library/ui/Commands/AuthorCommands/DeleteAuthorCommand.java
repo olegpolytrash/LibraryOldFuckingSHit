@@ -12,7 +12,8 @@ public class DeleteAuthorCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        Author.removeById(scanner.next());
+        System.out.println("Enter id:");
+        Author.removeById(scanner.nextInt());
     }
 
     @Override

@@ -1,5 +1,8 @@
 package com.soft.library.ui.Commands.BookCommands;
 
+import java.util.Scanner;
+
+import com.soft.library.data.Book;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -8,11 +11,13 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetBookByIdCommand implements ICommand {
     @Override
     public void execute() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter id: ");
+        Book.selectById(scanner.nextInt());
     }
 
     @Override
     public String getName() {
-        return "Get author by id";
+        return "Get book by id";
     }
 }

@@ -12,7 +12,8 @@ public class GetAuthorByIdCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        Author.selectById(scanner.next());
+        System.out.println("Enter id: ");
+        Author.selectById(scanner.nextInt());
     }
 
     @Override

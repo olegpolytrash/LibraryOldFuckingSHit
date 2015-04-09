@@ -8,6 +8,7 @@ import java.sql.SQLException;
  * Created by Oleg on 09.04.2015.
  */
 public class DBConnection {
+    
 
     public static Connection getConnection() {
         String dbClass = "com.mysql.jdbc.Driver";

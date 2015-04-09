@@ -62,7 +62,7 @@ public class MenuCreator {
                     menuOption.execute();
                 }
 
-                printEntryMessages();
+//                printEntryMessages();
             } else {
                 System.out.println("Please enter 1-" + commandCollection.getSize());
             }
