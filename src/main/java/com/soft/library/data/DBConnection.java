@@ -6,22 +6,20 @@ import java.sql.*;
  * Created by Oleg on 09.04.2015.
  */
 public class DBConnection {
-    public Connection getConnection() {
-        return null;
-    }
+    public static Connection getConnection() {
+        String dbClass = "com.mysql.jdbc.Driver";
+        Connection conn  = null;
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-            String dbClass = "com.mysql.jdbc.Driver";
-
+        try {
             Class.forName(dbClass);
-            Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://sql3.freemysqlhosting.net/sql373362",
+            conn = DriverManager.getConnection("jdbc:mysql://sql3.freemysqlhosting.net/sql373362",
                     "sql373362", "qB2!dR1%");
+        } catch (ClassNotFoundException e) {
+            System.out.println("can");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-        Statement stmt = conn.createStatement();
-
-        String sql = "SELECT * FROM Book";
-        ResultSet rs = stmt.executeQuery(sql);
-
-        rs.close();
+        return conn;
     }
 }
