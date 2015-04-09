@@ -21,6 +21,6 @@ public class MainMenu implements IMenu {
 
     @Override
     public String getName() {
-        return "author commands";
+        return "menu commands";
     }
 }

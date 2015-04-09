@@ -23,6 +23,6 @@ public class BookMenu implements IMenu {
 
     @Override
     public String getName() {
-        return "author commands";
+        return "book commands";
     }
 }

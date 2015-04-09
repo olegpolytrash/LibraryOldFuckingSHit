@@ -24,6 +24,6 @@ public class PublisherMenu implements IMenu {
 
     @Override
     public String getName() {
-        return "author commands";
+        return "publisher commands";
     }
 }

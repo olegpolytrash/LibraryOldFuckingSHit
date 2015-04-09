@@ -1,7 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-DBConnection.java
-
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
@@ -106,3 +104,5 @@ local.properties
 
 
 /target/
+
+src/main/java/com/soft/library/data/DBConnection.java
