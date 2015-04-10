@@ -1,4 +1,6 @@
-package com.soft.library.data;
+package com.soft.library.DataBase.data;
+
+import com.soft.library.DataBase.DataBaseCore.DBConnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

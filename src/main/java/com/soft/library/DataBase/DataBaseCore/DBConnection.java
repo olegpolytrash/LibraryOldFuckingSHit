@@ -1,4 +1,4 @@
-package com.soft.library.data;
+package com.soft.library.DataBase.DataBaseCore;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
