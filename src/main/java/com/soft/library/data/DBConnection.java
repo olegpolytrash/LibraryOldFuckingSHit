@@ -5,11 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Created by Oleg on 09.04.2015.
+ * Manages connection to the database
  */
 public class DBConnection {
-    
-
+    /**
+     * Get opened, ready-to-use connection
+     * @return an opened connection, or null if a connection couldn't be opened
+     */
     public static Connection getConnection() {
         String dbClass = "com.mysql.jdbc.Driver";
         Connection conn = null;
