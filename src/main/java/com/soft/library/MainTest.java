@@ -24,6 +24,7 @@ public class MainTest {
                 Author author = (Author) iterator.next();
                 System.out.print("id: " + author.getId());
                 System.out.print("name: " + author.getName());
+                System.out.print("name: " + author.getBooks());
                 System.out.println();
             }
             tx.commit();

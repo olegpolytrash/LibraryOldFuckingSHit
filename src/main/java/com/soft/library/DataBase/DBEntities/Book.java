@@ -1,13 +1,25 @@
 package com.soft.library.DataBase.DBEntities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
- * Created by Oleg on 10.04.2015.
+ * Database entry.
  */
 public class Book {
     private int id;
     private String name;
+    private Set<Author> authors = new HashSet<>(0);
 
     public Book() {
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -24,5 +36,13 @@ public class Book {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 }

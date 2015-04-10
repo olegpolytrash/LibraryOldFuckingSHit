@@ -1,7 +1,7 @@
 package com.soft.library.DataBase.DBEntities;
 
 /**
- * Created by Oleg on 10.04.2015.
+ * Database entry.
  */
 public class Publisher {
     private int id;
