@@ -10,6 +10,7 @@ import java.util.Scanner;
  * Class which create program menu.
  */
 public class Menu {
+    public static final int MIN_MENU_INDEX = 0;
     private CommandCollection commandCollection = new CommandCollection();
 
     public Menu(CommandCollection commandCollection) {
@@ -43,7 +44,9 @@ public class Menu {
             messageBuilder.append(System.lineSeparator());
         }
 
+        System.out.println();
         System.out.println(messageBuilder);
+        System.out.println();
     }
 
     public void runApplication() {
@@ -53,7 +56,7 @@ public class Menu {
             printEntryMessages();
             int programType = scanner.nextInt();
 
-            if (programType > 0 && programType < (commandCollection.getSize() + 1)) {
+            if (programType > MIN_MENU_INDEX && programType < (commandCollection.getSize() + 1)) {
                 IMenuOption menuOption = commandCollection.getByIndex(programType);
 
                 if (menuOption instanceof ExitMenuCommand) {
@@ -61,12 +64,10 @@ public class Menu {
                 } else {
                     menuOption.execute();
                 }
-
-//                printEntryMessages();
             } else {
-                System.out.println("Please enter 1-" + commandCollection.getSize());
+                System.out.println("insert correct index");
             }
-        }
+        }  // while
     }
 
     public void setCommandCollection(CommandCollection commandCollection) {
