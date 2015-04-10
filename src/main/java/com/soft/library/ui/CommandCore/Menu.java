@@ -9,10 +9,10 @@ import java.util.Scanner;
 /**
  * Class which create program menu.
  */
-public class MenuCreator {
+public class Menu {
     private CommandCollection commandCollection = new CommandCollection();
 
-    public MenuCreator(CommandCollection commandCollection) {
+    public Menu(CommandCollection commandCollection) {
         this.setCommandCollection(commandCollection);
         addExitMenuOptionIfAbsent();
     }

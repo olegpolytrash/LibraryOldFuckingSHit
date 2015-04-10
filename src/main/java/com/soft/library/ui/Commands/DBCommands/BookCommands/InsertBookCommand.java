@@ -1,4 +1,4 @@
-package com.soft.library.ui.Commands.BookCommands;
+package com.soft.library.ui.Commands.DBCommands.BookCommands;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.soft.library.ui.Commands.AuthorCommands;
+package com.soft.library.ui.Commands.DBCommands.AuthorCommands;
 
 import com.soft.library.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;

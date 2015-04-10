@@ -1,4 +1,4 @@
-package com.soft.library.ui.Commands.PublisherCommands;
+package com.soft.library.ui.Commands.DBCommands.PublisherCommands;
 
 import java.util.List;
 

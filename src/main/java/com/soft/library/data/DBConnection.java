@@ -22,7 +22,7 @@ public class DBConnection {
                     "jdbc:mysql://sql3.freemysqlhosting.net/sql373362",
                     "sql373362", "qB2!dR1%");
         } catch (ClassNotFoundException e) {
-            System.out.println("can");
+            System.out.println("couldn't open a connection to the database");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -30,10 +30,14 @@ public class DBConnection {
         return conn;
     }
 
-    public void closeConnection(Connection conn) {
+    /**
+     * Close the connection passed as an argument
+     * @param connection connection to be closed
+     */
+    public void closeConnection(Connection connection) {
         try {
-            if (conn != null)
-                conn.close();
+            if (connection != null)
+                connection.close();
         } catch (SQLException se) {
             se.printStackTrace();
         }

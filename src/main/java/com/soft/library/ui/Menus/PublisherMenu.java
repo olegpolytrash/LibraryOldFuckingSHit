@@ -2,8 +2,8 @@ package com.soft.library.ui.Menus;
 
 import com.soft.library.ui.CommandCore.CommandCollection;
 import com.soft.library.ui.CommandCore.IMenu;
-import com.soft.library.ui.CommandCore.MenuCreator;
-import com.soft.library.ui.Commands.PublisherCommands.*;
+import com.soft.library.ui.CommandCore.Menu;
+import com.soft.library.ui.Commands.DBCommands.PublisherCommands.*;
 
 /**
  * Created by Oleg on 09.04.2015.
@@ -18,7 +18,7 @@ public class PublisherMenu implements IMenu {
         publisherCommandCollection.addTask(new UpdatePublisherCommand());
         publisherCommandCollection.addTask(new InsertPublisherCommand());
 
-        new MenuCreator(publisherCommandCollection).runApplication();
+        new Menu(publisherCommandCollection).runApplication();
     }
 
     @Override

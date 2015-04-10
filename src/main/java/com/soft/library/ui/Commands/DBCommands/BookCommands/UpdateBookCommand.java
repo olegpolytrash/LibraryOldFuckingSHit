@@ -1,26 +1,26 @@
-package com.soft.library.ui.Commands.AuthorCommands;
-
-import com.soft.library.data.Author;
-import com.soft.library.ui.CommandCore.ICommand;
+package com.soft.library.ui.Commands.DBCommands.BookCommands;
 
 import java.util.Scanner;
+
+import com.soft.library.data.Book;
+import com.soft.library.ui.CommandCore.ICommand;
 
 /**
  * Created by Oleg on 09.04.2015.
  */
-public class UpdateAuthorCommand implements ICommand {
+public class UpdateBookCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in Author's id, name: ");
+        System.out.println("Type in Book id, title: ");
         String name = scanner.nextLine();
         String id = name.substring(0, name.indexOf(','));
         name = name.substring(name.indexOf(' ')).trim();
-        Author.updateAuthorName(id, name);
+        Book.updateAuthorName(id, name);
     }
 
     @Override
     public String getName() {
-        return "Update an author";
+        return "Update a book";
     }
 }
