@@ -105,4 +105,5 @@ local.properties
 
 /target/
 
-src/main/java/com/soft/library/data/DBConnection.java
+src/main/java/com/soft/library/DataBase/data/DBConnection.java
+target
