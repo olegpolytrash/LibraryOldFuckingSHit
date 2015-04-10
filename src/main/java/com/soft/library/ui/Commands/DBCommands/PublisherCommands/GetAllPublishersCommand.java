@@ -2,7 +2,7 @@ package com.soft.library.ui.Commands.DBCommands.PublisherCommands;
 
 import java.util.List;
 
-import com.soft.library.data.Publisher;
+import com.soft.library.DataBase.data.Publisher;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**

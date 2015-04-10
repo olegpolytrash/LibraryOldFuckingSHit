@@ -1,6 +1,6 @@
 package com.soft.library.ui.Commands.DBCommands.AuthorCommands;
 
-import com.soft.library.data.Author;
+import com.soft.library.DataBase.data.Author;
 import com.soft.library.ui.CommandCore.ICommand;
 
 import java.util.Scanner;
