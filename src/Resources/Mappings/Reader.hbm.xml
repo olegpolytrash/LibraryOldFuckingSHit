@@ -13,6 +13,6 @@
         <property name="surname" column="surname" type="string"/>
         <property name="mobilePhone" column="mobile_phone" type="string"/>
         <property name="address" column="address" type="string"/>
-        <property name="birthDate" column="birth_date" type="string"/>
+        <property name="birthDate" column="birth_date" type="date"/>
     </class>
 </hibernate-mapping>

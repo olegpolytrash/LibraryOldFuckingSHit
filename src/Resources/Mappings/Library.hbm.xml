@@ -5,7 +5,7 @@
 
 <!-- Mapping for the Author class -->
 <hibernate-mapping>
-    <class name="com.soft.library.DataBase.DBEntities.Author" table="Author">
+    <class name="com.soft.library.DataBase.DBEntities.Library" table="Library">
         <id name="id" type="int" column="id">
             <generator class="native"/>
         </id>
@@ -16,19 +16,15 @@
 
         <set name="books" table="Book" inverse="false" lazy="true" fetch="select" cascade="all" >
             <key>
-                <column name="book_id" not-null="true" />
+                <column name="book_id" />
             </key>
-            <many-to-many entity-name="com.soft.library.DataBase.DBEntities.Book">
-                <column name="id" not-null="true" />
-            </many-to-many>
+            <one-to-many entity-name="com.soft.library.DataBase.DBEntities.Book"/>
         </set>
         <set name="publishers" table="Publisher" inverse="false" lazy="true" fetch="select" cascade="all" >
             <key>
-                <column name="publisher_id" not-null="true" />
+                <column name="publisher_id" />
             </key>
-            <many-to-many entity-name="com.soft.library.DataBase.DBEntities.Publisher">
-                <column name="id" not-null="true" />
-            </many-to-many>
+            <one-to-many entity-name="com.soft.library.DataBase.DBEntities.Publisher"/>
         </set>
     </class>
 </hibernate-mapping>

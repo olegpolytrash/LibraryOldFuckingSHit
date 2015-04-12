@@ -23,19 +23,22 @@
         </property>
 
         <!-- uncomment to recreate database every time the tests are run -->
-        <!--<property name="hbm2ddl.auto">-->
-            <!--create-->
-        <!--</property>-->
+        <property name="hbm2ddl.auto">
+            create
+        </property>
 
         <!-- uncomment to see hibernate-generated SQL queries -->
-        <!--<property name="show_sql">-->
-            <!--true-->
-        <!--</property>-->
+        <property name="show_sql">
+            true
+        </property>
 
         <!-- List of XML mapping files -->
         <mapping resource="Mappings/Author.hbm.xml"/>
         <mapping resource="Mappings/Book.hbm.xml"/>
         <mapping resource="Mappings/Publisher.hbm.xml"/>
+        <mapping resource="Mappings/Library.hbm.xml"/>
+        <mapping resource="Mappings/LibraryLogEntry.hbm.xml"/>
+        <mapping resource="Mappings/Reader.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

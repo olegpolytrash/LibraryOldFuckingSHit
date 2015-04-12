@@ -2,19 +2,19 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-
 <!-- Mapping for the Author class -->
 <hibernate-mapping>
     <class name="com.soft.library.DataBase.DBEntities.LibraryLogEntry" table="ReaderBook">
-        <composite-id>
-            <key-property name="reader" column="reader_id" type="com.soft.library.DataBase.DBEntities.Reader" />
-            <key-property name="book" column="book_id" type="com.soft.library.DataBase.DBEntities.Book" />
-        </composite-id>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
 
         <property name="taken" column="date_taken" type="date"/>
         <property name="returned" column="date_returned" type="date"/>
 
-        <one-to-one name="reader" class="com.soft.library.DataBase.DBEntities.Reader" constrained="true" />
-        <one-to-one name="book" class="com.soft.library.DataBase.DBEntities.Book" constrained="true" />
+        <one-to-one name="book" class="com.soft.library.DataBase.DBEntities.Book"/>
+        <one-to-one name="reader" class="com.soft.library.DataBase.DBEntities.Reader"/>
+
     </class>
 </hibernate-mapping>

@@ -5,7 +5,7 @@
 
 <!-- Mapping for the Publisher class -->
 <hibernate-mapping>
-    <class name="com.soft.library.DataBase.DBEntities.Publisher" table="Author">
+    <class name="com.soft.library.DataBase.DBEntities.Publisher" table="Publisher">
         <id name="id" type="int" column="id">
             <generator class="native"/>
         </id>

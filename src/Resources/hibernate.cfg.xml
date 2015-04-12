@@ -26,6 +26,9 @@
         <mapping resource="Mappings/Author.hbm.xml"/>
         <mapping resource="Mappings/Book.hbm.xml"/>
         <mapping resource="Mappings/Publisher.hbm.xml"/>
+        <mapping resource="Mappings/Library.hbm.xml"/>
+        <mapping resource="Mappings/LibraryLogEntry.hbm.xml"/>
+        <mapping resource="Mappings/Reader.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
