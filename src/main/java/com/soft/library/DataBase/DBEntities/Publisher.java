@@ -10,6 +10,14 @@ public class Publisher {
     public Publisher() {
     }
 
+    @Override
+    public String toString() {
+        return "Publisher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

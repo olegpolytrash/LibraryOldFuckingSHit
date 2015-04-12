@@ -6,12 +6,32 @@ import java.sql.Date;
  * Database entry.
  */
 public class LibraryLogEntry {
+    private int id;
     private Book book;
     private Reader reader;
     private Date taken;
     private Date returned;
 
     public LibraryLogEntry() {
+    }
+
+    @Override
+    public String toString() {
+        return "LibraryLogEntry{" +
+                "id=" + id +
+                ", books=" + book +
+                ", readers=" + reader +
+                ", taken=" + taken +
+                ", returned=" + returned +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Book getBook() {

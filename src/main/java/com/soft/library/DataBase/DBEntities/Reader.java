@@ -16,6 +16,18 @@ public class Reader {
     public Reader() {
     }
 
+    @Override
+    public String toString() {
+        return "Reader{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", address='" + address + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

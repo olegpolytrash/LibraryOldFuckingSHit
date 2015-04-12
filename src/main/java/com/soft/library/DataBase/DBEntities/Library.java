@@ -17,6 +17,18 @@ public class Library {
     public Library() {
     }
 
+    @Override
+    public String toString() {
+        return "Library{" +
+                "id=" + id +
+                ", pages=" + pages +
+                ", year=" + year +
+                ", quantity=" + quantity +
+                ", books=" + books +
+                ", publishers=" + publishers +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
