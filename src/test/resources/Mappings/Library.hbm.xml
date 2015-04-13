@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Mapping for the Author class -->
+<hibernate-mapping>
+    <class name="com.soft.library.DataBase.DBEntities.Library" table="Library">
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="pages" column="pages" type="int"/>
+        <property name="year" column="year" type="int"/>
+        <property name="quantity" column="quantity" type="int"/>
+
+        <set name="books" table="Book" inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="book_id" />
+            </key>
+            <one-to-many entity-name="com.soft.library.DataBase.DBEntities.Book"/>
+        </set>
+        <set name="publishers" table="Publisher" inverse="false" lazy="true" fetch="select" cascade="all" >
+            <key>
+                <column name="publisher_id" />
+            </key>
+            <one-to-many entity-name="com.soft.library.DataBase.DBEntities.Publisher"/>
+        </set>
+    </class>
+</hibernate-mapping>
