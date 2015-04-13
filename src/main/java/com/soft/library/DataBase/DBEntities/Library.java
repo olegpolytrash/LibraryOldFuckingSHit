@@ -17,6 +17,12 @@ public class Library {
     public Library() {
     }
 
+    public Library(int pages, int year, int quantity) {
+        this.pages = pages;
+        this.year = year;
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Library{" +

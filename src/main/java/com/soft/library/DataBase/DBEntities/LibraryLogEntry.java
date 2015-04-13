@@ -15,6 +15,13 @@ public class LibraryLogEntry {
     public LibraryLogEntry() {
     }
 
+    public LibraryLogEntry(Book book, Reader reader, Date taken, Date returned) {
+        this.book = book;
+        this.reader = reader;
+        this.taken = taken;
+        this.returned = returned;
+    }
+
     @Override
     public String toString() {
         return "LibraryLogEntry{" +

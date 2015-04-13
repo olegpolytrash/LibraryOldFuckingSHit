@@ -16,6 +16,14 @@ public class Reader {
     public Reader() {
     }
 
+    public Reader(String name, String surname, String mobilePhone, String address, Date birthDate) {
+        this.name = name;
+        this.surname = surname;
+        this.mobilePhone = mobilePhone;
+        this.address = address;
+        this.birthDate = birthDate;
+    }
+
     @Override
     public String toString() {
         return "Reader{" +

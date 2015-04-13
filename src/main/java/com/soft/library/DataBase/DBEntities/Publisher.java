@@ -10,6 +10,10 @@ public class Publisher {
     public Publisher() {
     }
 
+    public Publisher(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Publisher{" +
