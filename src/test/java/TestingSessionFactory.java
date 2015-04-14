@@ -7,10 +7,17 @@ import org.hibernate.cfg.Configuration;
 public enum TestingSessionFactory {
     INSTANCE;
 
-    private final org.hibernate.SessionFactory sessionFactory;
+    private org.hibernate.SessionFactory sessionFactory;
 
     TestingSessionFactory() {
-        sessionFactory = new Configuration().configure("hibernateTest.cfg.xml").buildSessionFactory();
+        try {
+            Configuration configuration = new Configuration();
+            configuration.configure("hibernateTest.cfg.xml");
+            sessionFactory = configuration.buildSessionFactory();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
     }
 
     public org.hibernate.SessionFactory get()

@@ -1,5 +1,4 @@
 import com.soft.library.DataBase.DBEntities.*;
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,9 +11,14 @@ import java.sql.Date;
  */
 public class MainTest {
     public void testMethod(){
-        Session session = TestingSessionFactory.INSTANCE.get().openSession();
+        Session session = null;
         Transaction tx = null;
+
+        session = TestingSessionFactory.INSTANCE.get().openSession();
+
         try{
+            tx = null;
+
             tx = session.beginTransaction();
 
             Author a1 = new Author();
@@ -31,8 +35,8 @@ public class MainTest {
             Book b2 = new Book();
             b2.setName("b2");
             session.save(b2);
-            b2.getAuthors().add(a2);
 
+            b2.getAuthors().add(a2);
             a1.getBooks().add(b1);
 
             Publisher p1 = new Publisher();
@@ -62,10 +66,11 @@ public class MainTest {
             session.save(libraryLogEntry);
 
             tx.commit();
-        } catch (HibernateException e) {
+        } catch (Exception e) {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         } finally {
+            if (session != null)
             session.close();
         }
 
