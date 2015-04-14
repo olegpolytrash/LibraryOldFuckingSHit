@@ -3,19 +3,22 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
  * Database entry.
  */
 @Entity
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames={"name", "surname"})
+})
 public class Reader {
     @Id @GeneratedValue
-    private int id;
+    private Integer id;
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String surname;
     private String mobilePhone;
     private String address;

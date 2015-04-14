@@ -3,10 +3,7 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.sql.Date;
 
 /**
@@ -15,12 +12,14 @@ import java.sql.Date;
 @Entity
 public class LibraryLogEntry {
     @Id @GeneratedValue
-    private int id;
-    @OneToOne
+    private Integer id;
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
     private Book book;
-    @OneToOne
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
     private Reader reader;
+    @Column(nullable = false)
     private Date taken;
+    @Column(nullable = false)
     private Date returned;
 
     public LibraryLogEntry() {

@@ -3,10 +3,7 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,14 +13,16 @@ import java.util.Set;
 @Entity
 public class Library {
     @Id @GeneratedValue
-    private int id;
-    private int pages;
-    private int year;
-    private int quantity;
-    @OneToMany
-    private Set<Book> books = new HashSet<>(0);
-    @OneToMany
-    private Set<Publisher> publishers = new HashSet<>(0);
+    private Integer id;
+    private Integer pages;
+    @Column(nullable = false)
+    private Integer year;
+    @Column(nullable = false)
+    private Integer quantity;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Book book;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Publisher publisher;
 
     public Library() {
     }
@@ -41,8 +40,8 @@ public class Library {
                 ", pages=" + pages +
                 ", year=" + year +
                 ", quantity=" + quantity +
-                ", books=" + books +
-                ", publishers=" + publishers +
+                ", book=" + book +
+                ", publisher=" + publisher +
                 '}';
     }
 
@@ -98,19 +97,19 @@ public class Library {
         this.quantity = quantity;
     }
 
-    public Set<Book> getBooks() {
-        return books;
+    public Book getBook() {
+        return book;
     }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
+    public void setBook(Book book) {
+        this.book = book;
     }
 
-    public Set<Publisher> getPublishers() {
-        return publishers;
+    public Publisher getPublisher() {
+        return publisher;
     }
 
-    public void setPublishers(Set<Publisher> publishers) {
-        this.publishers = publishers;
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }

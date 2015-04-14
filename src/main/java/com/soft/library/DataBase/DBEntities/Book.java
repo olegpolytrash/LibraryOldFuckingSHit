@@ -13,12 +13,10 @@ import java.util.Set;
 @Entity
 public class Book {
     @Id @GeneratedValue
-    private int id;
+    private Integer id;
+    @Column(nullable = false, unique = true)
     private String name;
-    @ManyToMany
-    @JoinTable(name="BOOK_AUTHOR",  // name of the table to map author to a book
-            joinColumns={@JoinColumn(name="book_id")},  // id for this table, book
-            inverseJoinColumns={@JoinColumn(name="author_id")})  // id to map to
+    @ManyToMany(mappedBy = "books",  fetch = FetchType.LAZY)
     private Set<Author> authors = new HashSet<>(0);
 
     public Book() {
