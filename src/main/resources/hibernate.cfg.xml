@@ -23,12 +23,12 @@
         </property>
 
         <!-- List of XML mapping files -->
-        <mapping resource="Mappings/Author.hbm.xml"/>
-        <mapping resource="Mappings/Book.hbm.xml"/>
-        <mapping resource="Mappings/Publisher.hbm.xml"/>
-        <mapping resource="Mappings/Library.hbm.xml"/>
-        <mapping resource="Mappings/LibraryLogEntry.hbm.xml"/>
-        <mapping resource="Mappings/Reader.hbm.xml"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.Author"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.Book"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.Library"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.Publisher"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.Reader"/>
+        <mapping class="com.soft.library.DataBase.DBEntities.LibraryLogEntry"/>
 
     </session-factory>
 </hibernate-configuration>
