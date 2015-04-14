@@ -1,4 +1,3 @@
-import com.soft.library.DataBase.DBEntities.Author;
 import com.soft.library.DataBase.DBEntities.Library;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

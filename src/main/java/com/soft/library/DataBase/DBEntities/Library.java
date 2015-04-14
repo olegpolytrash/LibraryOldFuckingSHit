@@ -3,18 +3,26 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Database entry.
  */
+@Entity
 public class Library {
+    @Id @GeneratedValue
     private int id;
     private int pages;
     private int year;
     private int quantity;
+    @OneToMany
     private Set<Book> books = new HashSet<>(0);
+    @OneToMany
     private Set<Publisher> publishers = new HashSet<>(0);
 
     public Library() {

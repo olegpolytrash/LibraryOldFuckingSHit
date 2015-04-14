@@ -3,10 +3,16 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Database entry.
  */
+@Entity
 public class Publisher {
+    @Id @GeneratedValue
     private int id;
     private String name;
 

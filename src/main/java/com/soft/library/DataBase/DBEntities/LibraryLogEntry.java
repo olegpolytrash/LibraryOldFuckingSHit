@@ -3,14 +3,22 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.sql.Date;
 
 /**
  * Database entry.
  */
+@Entity
 public class LibraryLogEntry {
+    @Id @GeneratedValue
     private int id;
+    @OneToOne
     private Book book;
+    @OneToOne
     private Reader reader;
     private Date taken;
     private Date returned;
