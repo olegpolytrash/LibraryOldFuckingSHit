@@ -15,8 +15,12 @@
         <property name="hibernate.connection.url">
             jdbc:mysql://localhost/sql373362
         </property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <property name="hibernate.connection.password">
+            1234
+        </property>
 
         <!-- uncomment to recreate database every time the tests are run -->
         <property name="hbm2ddl.auto">
