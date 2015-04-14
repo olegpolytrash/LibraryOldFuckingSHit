@@ -1,7 +1,6 @@
 package com.soft.library.DataBase.data;
 
 import com.soft.library.DataBase.DataBaseCore.DBConnection;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,11 +8,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated
 public class ExecuteTables {
-    
 
     public static boolean insert(String name, String TABLE) {
-        String sql = "INSERT INTO " + TABLE + " (name) values (\'" + name + "\')";
+        String sql = "INSERT INTO " + TABLE + " (name) values (\'" + name
+                + "\')";
         return executeCommand(sql);
     }
 
@@ -23,8 +23,8 @@ public class ExecuteTables {
     }
 
     public static boolean updateAuthorName(String id, String name, String TABLE) {
-        String sql = "UPDATE " + TABLE + " SET name = \'" + name + "\' WHERE id = "
-                + id;
+        String sql = "UPDATE " + TABLE + " SET name = \'" + name
+                + "\' WHERE id = " + id;
         return executeCommand(sql);
     }
 
@@ -32,6 +32,7 @@ public class ExecuteTables {
         String sql = "SELECT " + id + " FROM " + TABLE + " WHERE ID = " + id;
         return executeGet(sql);
     }
+
     public static List<String> selectAll(String TABLE) {
         String sql = "SELECT * FROM " + TABLE;
         return executeGet(sql);

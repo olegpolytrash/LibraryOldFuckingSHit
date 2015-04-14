@@ -2,6 +2,7 @@ package com.soft.library.DataBase.data;
 
 import java.util.List;
 
+@Deprecated
 public class Author {
     static final String TABLE = "Author";
 
@@ -20,6 +21,7 @@ public class Author {
     public static List<String> selectById(int id) {
         return ExecuteTables.selectById(id, TABLE);
     }
+
     public static List<String> selectAll() {
         return ExecuteTables.selectAll(TABLE);
     }

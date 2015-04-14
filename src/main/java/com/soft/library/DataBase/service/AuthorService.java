@@ -22,7 +22,7 @@ public class AuthorService {
         return DaoFactory.getInstance().getAuthorDAO().getElementByID(authorId);
     }
 
-    public List<Author> getAllAuthor() {
+    public List<Author> getAllAuthors() {
         return DaoFactory.getInstance().getAuthorDAO().getAllElements();
     }
 

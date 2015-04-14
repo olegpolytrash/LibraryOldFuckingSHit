@@ -2,6 +2,7 @@ package com.soft.library.DataBase.data;
 
 import java.util.List;
 
+@Deprecated
 public class Publisher {
     static final String TABLE = "Publisher";
 
