@@ -3,12 +3,17 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Date;
 
 /**
  * Database entry.
  */
+@Entity
 public class Reader {
+    @Id @GeneratedValue
     private int id;
     private String name;
     private String surname;

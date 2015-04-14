@@ -3,15 +3,22 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Database entry.
  */
+@Entity
 public class Book {
+    @Id @GeneratedValue
     private int id;
     private String name;
+    @ManyToMany
+    @JoinTable(name="BOOK_AUTHOR",  // name of the table to map author to a book
+            joinColumns={@JoinColumn(name="book_id")},  // id for this table, book
+            inverseJoinColumns={@JoinColumn(name="author_id")})  // id to map to
     private Set<Author> authors = new HashSet<>(0);
 
     public Book() {
@@ -26,6 +33,7 @@ public class Book {
         return "Book{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                //", authors=" + authors +
                 '}';
     }
 

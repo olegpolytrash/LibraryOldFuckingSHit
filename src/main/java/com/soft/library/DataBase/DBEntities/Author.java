@@ -3,15 +3,22 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Database entry.
  */
+@Entity
 public class Author {
+    @Id @GeneratedValue
     private int id;
     private String name;
+    @ManyToMany
+    @JoinTable(name="BOOK_AUTHOR",
+            joinColumns={@JoinColumn(name="author_id")},
+            inverseJoinColumns={@JoinColumn(name="book_id")})
     private Set<Book> books = new HashSet<>(0);
 
     public Author() {
