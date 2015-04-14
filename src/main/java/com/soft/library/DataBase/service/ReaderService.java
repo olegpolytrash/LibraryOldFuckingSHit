@@ -5,7 +5,6 @@ package com.soft.library.DataBase.service;
 
 import java.util.List;
 
-import com.soft.library.DataBase.DBEntities.Publisher;
 import com.soft.library.DataBase.DBEntities.Reader;
 import com.soft.library.DataBase.dao.DaoFactory;
 
