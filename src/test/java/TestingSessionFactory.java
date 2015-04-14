@@ -9,6 +9,7 @@ public enum TestingSessionFactory {
 
     private final org.hibernate.SessionFactory sessionFactory;
 
+    @SuppressWarnings("deprecation")
     TestingSessionFactory() {
         sessionFactory = new Configuration().configure("hibernateTest.cfg.xml").buildSessionFactory();
     }
