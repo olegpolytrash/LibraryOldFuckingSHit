@@ -1,5 +1,8 @@
 package com.soft.library.DataBase.DBEntities;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.sql.Date;
 
 /**
@@ -31,6 +34,26 @@ public class LibraryLogEntry {
                 ", taken=" + taken +
                 ", returned=" + returned +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        LibraryLogEntry that = (LibraryLogEntry) o;
+
+        return new EqualsBuilder()
+                .append(getId(), that.getId())
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getId())
+                .toHashCode();
     }
 
     public int getId() {

@@ -1,5 +1,8 @@
 package com.soft.library.DataBase.DBEntities;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.sql.Date;
 
 /**
@@ -34,6 +37,26 @@ public class Reader {
                 ", address='" + address + '\'' +
                 ", birthDate=" + birthDate +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Reader reader = (Reader) o;
+
+        return new EqualsBuilder()
+                .append(getId(), reader.getId())
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getId())
+                .toHashCode();
     }
 
     public int getId() {

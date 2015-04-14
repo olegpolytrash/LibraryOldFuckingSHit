@@ -1,5 +1,8 @@
 package com.soft.library.DataBase.DBEntities;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,6 +36,26 @@ public class Library {
                 ", books=" + books +
                 ", publishers=" + publishers +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Library library = (Library) o;
+
+        return new EqualsBuilder()
+                .append(getId(), library.getId())
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(getId())
+                .toHashCode();
     }
 
     public int getId() {
