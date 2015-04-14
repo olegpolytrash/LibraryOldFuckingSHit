@@ -8,6 +8,7 @@ import java.util.Scanner;
 /**
  * Created by Oleg on 09.04.2015.
  */
+@Deprecated
 public class InsertAuthorCommand implements ICommand {
 
     @Override
