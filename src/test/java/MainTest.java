@@ -52,9 +52,11 @@ public class MainTest {
             session.save(r1);
 
             Library library = new Library();
-            library.getBooks().add(b1);
-            library.getBooks().add(b2);
-            library.getPublishers().add(p1);
+            library.setYear(10);
+            library.setPages(123);
+            library.setBook(b1);
+            library.setQuantity(4);
+            library.setPublisher(p1);
 
             session.save(library);
 

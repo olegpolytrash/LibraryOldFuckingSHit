@@ -3,6 +3,7 @@ package com.soft.library.DataBase.DBEntities;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,7 +14,8 @@ import javax.persistence.Id;
 @Entity
 public class Publisher {
     @Id @GeneratedValue
-    private int id;
+    private Integer id;
+    @Column(nullable = false, unique = true)
     private String name;
 
     public Publisher() {
