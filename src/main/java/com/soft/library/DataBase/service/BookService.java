@@ -15,7 +15,7 @@ public class BookService {
         DaoFactory.getInstance().getBookDAO().updateElement(book);
     }
 
-    public Book getBookById(Long bookId) {
+    public Book getBookById(Integer bookId) {
         return DaoFactory.getInstance().getBookDAO().getElementByID(bookId);
     }
 

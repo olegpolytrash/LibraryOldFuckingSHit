@@ -22,7 +22,7 @@ public class PublisherService {
         DaoFactory.getInstance().getPublisherDAO().updateElement(publisher);
     }
 
-    public Publisher getPublisherById(Long publisherId) {
+    public Publisher getPublisherById(Integer publisherId) {
         return DaoFactory.getInstance().getPublisherDAO().getElementByID(publisherId);
     }
 

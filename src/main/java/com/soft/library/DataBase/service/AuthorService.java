@@ -18,7 +18,7 @@ public class AuthorService {
         DaoFactory.getInstance().getAuthorDAO().updateElement(author);
     }
 
-    public Author getAuthorById(Long authorId) {
+    public Author getAuthorById(Integer authorId) {
         return DaoFactory.getInstance().getAuthorDAO().getElementByID(authorId);
     }
 

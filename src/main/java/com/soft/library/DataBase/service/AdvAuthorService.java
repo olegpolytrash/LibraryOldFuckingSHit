@@ -40,7 +40,7 @@ public class AdvAuthorService {
         }
     }
 
-    public static Author getAuthorById(long authorId) {
+    public static Author getAuthorById(int authorId) {
         AuthorService as = new AuthorService();
         return as.getAuthorById(authorId);
     }

@@ -23,7 +23,7 @@ public class ReaderService {
         DaoFactory.getInstance().getReaderDAO().updateElement(reader);
     }
 
-    public Reader getReaderById(Long readerId) {
+    public Reader getReaderById(Integer readerId) {
         return DaoFactory.getInstance().getReaderDAO().getElementByID(readerId);
     }
 

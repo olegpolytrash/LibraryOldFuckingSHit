@@ -46,7 +46,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public E getElementByID(Long elementId) {
+    public E getElementByID(Integer elementId) {
         Session session = null;
         E element = null;
         try {

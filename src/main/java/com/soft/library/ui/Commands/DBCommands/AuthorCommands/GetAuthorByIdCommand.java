@@ -13,7 +13,7 @@ public class GetAuthorByIdCommand implements ICommand {
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id: ");
-        long authorId = scanner.nextLong();
+        int authorId = scanner.nextInt();
         System.out.println(AdvAuthorService.getAuthorById(authorId).getName());
     }
 
