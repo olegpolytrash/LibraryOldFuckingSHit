@@ -3,6 +3,7 @@ package com.soft.library.ui.Commands.DBCommands.BookCommands;
 import java.util.List;
 
 import com.soft.library.DataBase.data.Book;
+import com.soft.library.DataBase.service.AdvBookService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -11,10 +12,7 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetAllBooksCommand implements ICommand {
     @Override
     public void execute() {
-        List<String> books = Book.selectAll();
-        for(String i : books){
-            System.out.println(i);
-        }
+        AdvBookService.printBooks();
     }
 
     @Override

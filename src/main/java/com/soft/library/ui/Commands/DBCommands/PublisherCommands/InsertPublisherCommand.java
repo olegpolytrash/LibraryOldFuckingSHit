@@ -2,7 +2,7 @@ package com.soft.library.ui.Commands.DBCommands.PublisherCommands;
 
 import java.util.Scanner;
 
-import com.soft.library.DataBase.data.Publisher;
+import com.soft.library.DataBase.service.AdvPublisherService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -13,8 +13,8 @@ public class InsertPublisherCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type a publisher name: ");
-        Publisher.insert(scanner.nextLine());
+        System.out.println("Type in publisher's name: ");
+        AdvPublisherService.addPublisher(scanner.nextLine());
     }
 
     @Override

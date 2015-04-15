@@ -2,7 +2,7 @@ package com.soft.library.ui.Commands.DBCommands.PublisherCommands;
 
 import java.util.Scanner;
 
-import com.soft.library.DataBase.data.Publisher;
+import com.soft.library.DataBase.service.AdvPublisherService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -12,8 +12,8 @@ public class DeletePublisherCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter id:");
-        Publisher.removeById(scanner.nextInt());
+        System.out.println("Enter title:");
+        AdvPublisherService.deletePublisher(scanner.nextLine());
     }
 
     @Override

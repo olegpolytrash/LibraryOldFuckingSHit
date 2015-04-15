@@ -1,8 +1,7 @@
 package com.soft.library.ui.Commands.DBCommands.BookCommands;
 
 import java.util.Scanner;
-
-import com.soft.library.DataBase.data.Book;
+import com.soft.library.DataBase.service.AdvBookService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -12,11 +11,11 @@ public class UpdateBookCommand implements ICommand {
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in Book id, title: ");
-        String name = scanner.nextLine();
-        String id = name.substring(0, name.indexOf(','));
-        name = name.substring(name.indexOf(' ')).trim();
-        Book.updateAuthorName(id, name);
+        System.out.println("Type in Book's old title, new title: ");
+        String newName = scanner.nextLine();
+        String oldName = newName.substring(0, newName.indexOf(','));
+        newName = newName.substring(newName.indexOf(' ')).trim();
+        AdvBookService.updateBooks(oldName, newName);
     }
 
     @Override
