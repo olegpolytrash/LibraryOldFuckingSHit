@@ -4,6 +4,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import javax.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,11 @@ public class Author {
     private Integer id;
     @Column(nullable = false, unique = true)
     private String name;
-    @ManyToMany(fetch = FetchType.LAZY)
+    
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "BookAuthor", 
+            joinColumns = { @JoinColumn(name = "Book_ID") }, 
+            inverseJoinColumns = {@JoinColumn(name = "Author_ID")})
     private Set<Book> books = new HashSet<>(0);
 
     public Author() {

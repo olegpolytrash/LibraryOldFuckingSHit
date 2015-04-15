@@ -16,7 +16,11 @@ public class Book {
     private Integer id;
     @Column(nullable = false, unique = true)
     private String name;
-    @ManyToMany(mappedBy = "books",  fetch = FetchType.LAZY)
+    
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "BookAuthor", 
+            joinColumns = {@JoinColumn(name = "Author_ID")}, 
+            inverseJoinColumns = {@JoinColumn(name = "Book_ID")})
     private Set<Author> authors = new HashSet<>(0);
 
     public Book() {

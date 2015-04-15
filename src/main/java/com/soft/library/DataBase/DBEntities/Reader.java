@@ -14,14 +14,20 @@ import java.sql.Date;
         @UniqueConstraint(columnNames={"name", "surname"})
 })
 public class Reader {
+    
     @Id @GeneratedValue
     private Integer id;
+    
     @Column(nullable = false)
     private String name;
+    
     @Column(nullable = false)
     private String surname;
+    
     private String mobilePhone;
+    
     private String address;
+    
     private Date birthDate;
 
     public Reader() {

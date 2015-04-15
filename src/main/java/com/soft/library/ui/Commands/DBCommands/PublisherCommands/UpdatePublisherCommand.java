@@ -15,7 +15,7 @@ public class UpdatePublisherCommand implements ICommand {
         System.out.println("Type in Publisher's old name, new name: ");
         String newName = scanner.nextLine();
         String oldName = newName.substring(0, newName.indexOf(','));
-        newName = newName.substring(newName.indexOf(' ')).trim();
+        newName = newName.substring(newName.indexOf(',')).trim();
         AdvPublisherService.updatePublishers(oldName, newName);
     }
 
