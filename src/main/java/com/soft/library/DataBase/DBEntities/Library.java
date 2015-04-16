@@ -19,9 +19,9 @@ public class Library {
     private Integer year;
     @Column(nullable = false)
     private Integer quantity;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
     private Book book;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
     private Publisher publisher;
 
     public Library() {
