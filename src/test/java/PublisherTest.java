@@ -1,9 +1,9 @@
+import com.soft.library.dataBase.dataBaseCore.JPAUtil;
 import com.soft.library.dataBase.model.Publisher;
-
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import java.util.Iterator;
 import java.util.List;
 
@@ -12,22 +12,23 @@ import java.util.List;
  */
 public class PublisherTest {
     public static void getAll() {
-        Session session = TestingSessionFactory.INSTANCE.get().openSession();
-        Transaction tx = null;
-        try{
-            tx = session.beginTransaction();
-            List publishers = session.createQuery("FROM Publisher").list();
-            for (Iterator iterator = publishers.iterator(); iterator.hasNext();) {
+        EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
+        EntityTransaction transaction = null;
+        try {
+            transaction = entityManager.getTransaction();
+            transaction.begin();
+            List authors = entityManager.createQuery("SELECT a FROM com.soft.library.dataBase.model.Publisher a").getResultList();
+            for (Iterator iterator = authors.iterator(); iterator.hasNext(); ) {
                 Publisher author = (Publisher) iterator.next();
                 System.out.print(author);
                 System.out.println();
             }
-            tx.commit();
-        }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
             e.printStackTrace();
         } finally {
-            session.close();
+            entityManager.close();
         }
     }
 }
