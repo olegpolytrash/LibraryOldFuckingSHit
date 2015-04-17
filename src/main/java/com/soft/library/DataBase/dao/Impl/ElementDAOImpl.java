@@ -1,11 +1,11 @@
-package com.soft.library.DataBase.dao.Impl;
+package com.soft.library.dataBase.dao.impl;
 
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.soft.library.dataBase.DataBaseCore.SessionFactory;
+import com.soft.library.dataBase.dataBaseCore.SessionFactory;
 import com.soft.library.dataBase.dao.BaseDao;
 
 public class ElementDAOImpl<E> implements BaseDao<E> {

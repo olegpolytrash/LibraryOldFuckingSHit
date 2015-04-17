@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.soft.library.DataBase.service;
+package com.soft.library.dataBase.service;
 
-import com.soft.library.dataBase.DBEntities.Author;
+import com.soft.library.dataBase.model.Author;
 import com.soft.library.dataBase.dao.AuthorDAO;
-import com.soft.library.dataBase.dao.Impl.DaoFactory;
+import com.soft.library.dataBase.dao.impl.DaoFactory;
 
 /**
  * @author rd

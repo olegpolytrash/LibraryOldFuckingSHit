@@ -1,9 +1,9 @@
-package com.soft.library.ui.Menus;
+package com.soft.library.ui.menus;
 
-import com.soft.library.ui.CommandCore.CommandCollection;
-import com.soft.library.ui.CommandCore.IMenu;
-import com.soft.library.ui.CommandCore.Menu;
-import com.soft.library.ui.Commands.DBCommands.AuthorCommands.*;
+import com.soft.library.ui.commandCore.CommandCollection;
+import com.soft.library.ui.commandCore.IMenu;
+import com.soft.library.ui.commandCore.Menu;
+import com.soft.library.ui.commands.dataBaseCommands.authorCommands.*;
 
 /**
  * Created by Oleg on 09.04.2015.

@@ -1,6 +1,6 @@
-package com.soft.library.DataBase.dao;
+package com.soft.library.dataBase.dao;
 
-import com.soft.library.dataBase.DBEntities.Book;
+import com.soft.library.dataBase.model.Book;
 
 /**
  * Created by Oleg on 17.04.2015.

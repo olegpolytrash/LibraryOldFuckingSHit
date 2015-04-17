@@ -1,4 +1,4 @@
-package com.soft.library.DataBase.DataBaseCore;
+package com.soft.library.dataBase.dataBaseCore;
 
 import org.hibernate.cfg.Configuration;
 

@@ -1,11 +1,11 @@
-package com.soft.library.ui.Commands;
+package com.soft.library.ui.commands;
 
-import com.soft.library.ui.CommandCore.ICommand;
+import com.soft.library.ui.commandCore.Command;
 
 /**
  * Created by Oleg on 09.04.2015.
  */
-public class ExitMenuCommand implements ICommand {
+public class ExitMenuCommand implements Command {
     @Override
     public void execute() {
         // not needed for this class

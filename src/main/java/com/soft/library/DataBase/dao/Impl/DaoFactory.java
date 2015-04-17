@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.soft.library.DataBase.dao.Impl;
+package com.soft.library.dataBase.dao.impl;
 
 /**
  * @author rd

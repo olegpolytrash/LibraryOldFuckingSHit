@@ -32,12 +32,12 @@
             <!--true-->
         <!--</property>-->
 
-        <mapping class="com.soft.library.DataBase.DBEntities.Author"/>
-        <mapping class="com.soft.library.DataBase.DBEntities.Book"/>
-        <mapping class="com.soft.library.DataBase.DBEntities.Library"/>
-        <mapping class="com.soft.library.DataBase.DBEntities.Publisher"/>
-        <mapping class="com.soft.library.DataBase.DBEntities.Reader"/>
-        <mapping class="com.soft.library.DataBase.DBEntities.LibraryLogEntry"/>
+        <mapping class="com.soft.library.dataBase.model.Author"/>
+        <mapping class="com.soft.library.dataBase.model.Book"/>
+        <mapping class="com.soft.library.dataBase.model.Library"/>
+        <mapping class="com.soft.library.dataBase.model.Publisher"/>
+        <mapping class="com.soft.library.dataBase.model.Reader"/>
+        <mapping class="com.soft.library.dataBase.model.LibraryLogEntry"/>
 
     </session-factory>
 </hibernate-configuration>

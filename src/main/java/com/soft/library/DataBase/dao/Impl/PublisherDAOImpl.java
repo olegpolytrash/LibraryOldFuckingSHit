@@ -1,9 +1,9 @@
 /**
  * 
  */
-package com.soft.library.DataBase.dao.Impl;
+package com.soft.library.dataBase.dao.impl;
 
-import com.soft.library.dataBase.DBEntities.Publisher;
+import com.soft.library.dataBase.model.Publisher;
 import com.soft.library.dataBase.dao.PublisherDAO;
 
 /**

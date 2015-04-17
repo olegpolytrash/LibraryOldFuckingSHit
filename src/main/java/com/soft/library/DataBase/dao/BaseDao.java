@@ -1,4 +1,4 @@
-package com.soft.library.DataBase.dao;
+package com.soft.library.dataBase.dao;
 
 import java.util.List;
 

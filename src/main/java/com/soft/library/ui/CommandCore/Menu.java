@@ -1,6 +1,6 @@
-package com.soft.library.ui.CommandCore;
+package com.soft.library.ui.commandCore;
 
-import com.soft.library.ui.Commands.ExitMenuCommand;
+import com.soft.library.ui.commands.ExitMenuCommand;
 
 import java.util.Iterator;
 import java.util.Map;

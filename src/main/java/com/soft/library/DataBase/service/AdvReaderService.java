@@ -1,8 +1,8 @@
-package com.soft.library.DataBase.service;
+package com.soft.library.dataBase.service;
 
-import com.soft.library.dataBase.DBEntities.Reader;
+import com.soft.library.dataBase.model.Reader;
 import com.soft.library.dataBase.dao.ReaderDAO;
-import com.soft.library.dataBase.dao.Impl.DaoFactory;
+import com.soft.library.dataBase.dao.impl.DaoFactory;
 
 public class AdvReaderService {
     private ReaderDAO readerDAO;

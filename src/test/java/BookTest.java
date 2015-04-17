@@ -1,4 +1,4 @@
-import com.soft.library.dataBase.DBEntities.Book;
+import com.soft.library.dataBase.model.Book;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

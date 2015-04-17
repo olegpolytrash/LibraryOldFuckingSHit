@@ -1,4 +1,4 @@
-package com.soft.library.ui.CommandCore;
+package com.soft.library.ui.commandCore;
 
 import java.util.Map;
 import java.util.Set;

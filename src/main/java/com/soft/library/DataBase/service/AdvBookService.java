@@ -1,8 +1,8 @@
-package com.soft.library.DataBase.service;
+package com.soft.library.dataBase.service;
 
-import com.soft.library.dataBase.DBEntities.Book;
+import com.soft.library.dataBase.model.Book;
 import com.soft.library.dataBase.dao.BookDAO;
-import com.soft.library.dataBase.dao.Impl.DaoFactory;
+import com.soft.library.dataBase.dao.impl.DaoFactory;
 
 public class AdvBookService {
     private BookDAO bookDAO;

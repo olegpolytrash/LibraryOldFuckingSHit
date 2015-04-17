@@ -1,4 +1,4 @@
-package com.soft.library.ui.CommandCore;
+package com.soft.library.ui.commandCore;
 
 /**
  * Interface that every menu option must implement

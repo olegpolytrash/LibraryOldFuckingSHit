@@ -1,12 +1,11 @@
 
-import com.soft.library.dataBase.DBEntities.Author;
+import com.soft.library.dataBase.model.Author;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.testng.annotations.Test;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
