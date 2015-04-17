@@ -52,13 +52,6 @@ public class Book {
                 .isEquals();
     }
 
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(getId())
-                .toHashCode();
-    }
-
     public int getId() {
         return id;
     }

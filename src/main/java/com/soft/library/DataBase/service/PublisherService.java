@@ -6,7 +6,7 @@ package com.soft.library.DataBase.service;
 import java.util.List;
 
 import com.soft.library.DataBase.DBEntities.Publisher;
-import com.soft.library.DataBase.dao.DaoFactory;
+import com.soft.library.DataBase.dao.Impl.DaoFactory;
 
 /**
  * @author rd
@@ -15,23 +15,23 @@ import com.soft.library.DataBase.dao.DaoFactory;
 public class PublisherService {
 
     public void addPublisher(Publisher publisher) {
-        DaoFactory.getInstance().getPublisherDAO().addElement(publisher);
+        DaoFactory.getInstance().getPublisherDAOImpl().addElement(publisher);
     }
 
     public void updatePublisher(Publisher publisher) {
-        DaoFactory.getInstance().getPublisherDAO().updateElement(publisher);
+        DaoFactory.getInstance().getPublisherDAOImpl().updateElement(publisher);
     }
 
     public Publisher getPublisherById(Integer publisherId) {
-        return DaoFactory.getInstance().getPublisherDAO().getElementByID(publisherId);
+        return DaoFactory.getInstance().getPublisherDAOImpl().getElementByID(publisherId);
     }
 
     public List<Publisher> getAllPublishers() {
-        return DaoFactory.getInstance().getPublisherDAO().getAllElements();
+        return DaoFactory.getInstance().getPublisherDAOImpl().getAllElements();
     }
 
     public void deletePublisher(Publisher publisher) {
-        DaoFactory.getInstance().getPublisherDAO().deleteElement(publisher);
+        DaoFactory.getInstance().getPublisherDAOImpl().deleteElement(publisher);
     }
 
 }

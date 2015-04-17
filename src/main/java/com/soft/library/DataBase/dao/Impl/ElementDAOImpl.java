@@ -1,13 +1,14 @@
-package com.soft.library.DataBase.dao;
+package com.soft.library.DataBase.dao.Impl;
 
 import java.util.List;
 
+import com.soft.library.DataBase.dao.BaseDao;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.soft.library.DataBase.DataBaseCore.SessionFactory;
 
-public class ElementDAOImpl<E> implements ElementDao<E> {
+public class ElementDAOImpl<E> implements BaseDao<E> {
     private Class<E> elementClass;
 
     public ElementDAOImpl(Class<E> elementClass) {
@@ -15,7 +16,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
     }
 
     @Override
-    public void addElement(E element) {
+    public void save(E element) {
         Session session = null;
         try {
             session = SessionFactory.INSTANCE.get().openSession();
@@ -30,7 +31,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
     }
 
     @Override
-    public void updateElement(E element) {
+    public void update(E element) {
         Session session = null;
         try {
             session = SessionFactory.INSTANCE.get().openSession();
@@ -46,7 +47,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public E getElementByID(Integer elementId) {
+    public E findById(int elementId) {
         Session session = null;
         E element = null;
         try {
@@ -61,7 +62,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<E> getAllElements() {
+    public List<E> getAll() {
         Session session = null;
         List<E> elements;
         try {
@@ -75,7 +76,7 @@ public class ElementDAOImpl<E> implements ElementDao<E> {
     }
 
     @Override
-    public void deleteElement(E element) {
+    public void remove(E element) {
         Session session = null;
         try {
             session = SessionFactory.INSTANCE.get().openSession();
