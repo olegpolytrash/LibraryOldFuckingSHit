@@ -3,53 +3,55 @@
  */
 package com.soft.library.DataBase.service;
 
-import com.soft.library.DataBase.DBEntities.Publisher;
+import com.soft.library.dataBase.DBEntities.Publisher;
+import com.soft.library.dataBase.dao.PublisherDAO;
+import com.soft.library.dataBase.dao.Impl.DaoFactory;
 
 /**
- * @author rd
+ * @publisher rd
  *
  */
 public class AdvPublisherService {
+    private PublisherDAO publisherDAO;
 
-    public static void addPublisher(String title) {
-        Publisher publisher = new Publisher();
-        publisher.setName(title);
-        PublisherService as = new PublisherService();
-        as.addPublisher(publisher);
+    public AdvPublisherService() {
+        publisherDAO = DaoFactory.getInstance().getPublisherDAOImpl();
     }
 
-    public static int updatePublishers(String oldName, String newName) {
-        PublisherService as = new PublisherService();
+    public void addPublisher(String title) {
+        Publisher publisher = new Publisher();
+        publisher.setName(title);
+        publisherDAO.save(publisher);
+    }
+
+    public int updatePublishers(String oldName, String newName) {
         int count = 0;
-        for (Publisher a : as.getAllPublishers()) {
+        for (Publisher a : publisherDAO.getAll()) {
             if (a.getName().equals(oldName)) {
                 a.setName(newName);
-                as.updatePublisher(a);
+                publisherDAO.update(a);
                 count++;
             }
         }
         return count;
     }
 
-    public static void printPublishers() {
-        PublisherService as = new PublisherService();
+    public void printPublishers() {
         System.out.println("\nAll Publishers:");
-        for (Publisher a : as.getAllPublishers()) {
-            System.out.println("publisher: id=" + a.getId() + " Title="
+        for (Publisher a : publisherDAO.getAll()) {
+            System.out.println("publisherDAO: id=" + a.getId() + " Title="
                     + a.getName());
         }
     }
 
-    public static Publisher getPublisherById(int publisherId) {
-        PublisherService as = new PublisherService();
-        return as.getPublisherById(publisherId);
+    public Publisher getPublisherById(int publisherDAOId) {
+        return publisherDAO.findById(publisherDAOId);
     }
 
-    public static void deletePublisher(String publisher) {
-        PublisherService as = new PublisherService();
-        for (Publisher a : as.getAllPublishers()) {
-            if (a.getName().equalsIgnoreCase(publisher)) {
-                as.deletePublisher(a);
+    public void deletePublisher(String name) {
+        for (Publisher a : publisherDAO.getAll()) {
+            if (a.getName().equalsIgnoreCase(name)) {
+                publisherDAO.remove(a);
                 break;
             }
         }

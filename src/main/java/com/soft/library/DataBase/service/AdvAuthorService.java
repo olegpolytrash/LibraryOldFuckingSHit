@@ -3,56 +3,57 @@
  */
 package com.soft.library.DataBase.service;
 
-import com.soft.library.DataBase.DBEntities.Author;
+import com.soft.library.dataBase.DBEntities.Author;
+import com.soft.library.dataBase.dao.AuthorDAO;
+import com.soft.library.dataBase.dao.Impl.DaoFactory;
 
 /**
  * @author rd
  *
  */
 public class AdvAuthorService {
+    private AuthorDAO authorDAO;
 
-    public static void addAuthor(String title) {
-        Author author = new Author();
-        author.setName(title);
-        AuthorService as = new AuthorService();
-        as.addAuthor(author);
+    public AdvAuthorService() {
+        authorDAO = DaoFactory.getInstance().getAuthorDAOImpl();
     }
 
-    public static int updateAuthors(String oldName, String newName) {
-        AuthorService as = new AuthorService();
+    public void addAuthor(String title) {
+        Author author = new Author();
+        author.setName(title);
+        authorDAO.save(author);
+    }
+
+    public int updateAuthors(String oldName, String newName) {
         int count = 0;
-        for (Author a : as.getAllAuthors()) {
+        for (Author a : authorDAO.getAll()) {
             if (a.getName().equals(oldName)) {
                 a.setName(newName);
-                as.updateAuthor(a);
+                authorDAO.update(a);
                 count++;
             }
         }
         return count;
     }
 
-    public static void printAuthors() {
-        AuthorService as = new AuthorService();
-        System.out.println("\nAll Books:");
-        for (Author a : as.getAllAuthors()) {
-            System.out.println("author: id=" + a.getId() + " Title="
+    public void printAuthors() {
+        System.out.println("\nAll Authors:");
+        for (Author a : authorDAO.getAll()) {
+            System.out.println("authorDAO: id=" + a.getId() + " Title="
                     + a.getName());
         }
     }
 
-    public static Author getAuthorById(int authorId) {
-        AuthorService as = new AuthorService();
-        return as.getAuthorById(authorId);
+    public Author getAuthorById(int authorDAOId) {
+        return authorDAO.findById(authorDAOId);
     }
 
-    public static void deleteAuthor(String author) {
-        AuthorService as = new AuthorService();
-        for (Author a : as.getAllAuthors()) {
-            if (a.getName().equalsIgnoreCase(author)) {
-                as.deleteAuthor(a);
+    public void deleteAuthor(String name) {
+        for (Author a : authorDAO.getAll()) {
+            if (a.getName().equalsIgnoreCase(name)) {
+                authorDAO.remove(a);
                 break;
             }
         }
-
     }
 }

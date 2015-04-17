@@ -1,48 +1,50 @@
 package com.soft.library.DataBase.service;
 
-import com.soft.library.DataBase.DBEntities.Book;
+import com.soft.library.dataBase.DBEntities.Book;
+import com.soft.library.dataBase.dao.BookDAO;
+import com.soft.library.dataBase.dao.Impl.DaoFactory;
 
 public class AdvBookService {
+    private BookDAO bookDAO;
 
-    public static void addBook(String title) {
-        Book book = new Book();
-        book.setName(title);
-        BookService as = new BookService();
-        as.addBook(book);
+    public AdvBookService() {
+        bookDAO = DaoFactory.getInstance().getBookDAOImpl();
     }
 
-    public static int updateBooks(String oldName, String newName) {
-        BookService as = new BookService();
+    public void addBook(String title) {
+        Book book = new Book();
+        book.setName(title);
+        bookDAO.save(book);
+    }
+
+    public int updateBooks(String oldName, String newName) {
         int count = 0;
-        for (Book a : as.getAllBooks()) {
+        for (Book a : bookDAO.getAll()) {
             if (a.getName().equals(oldName)) {
                 a.setName(newName);
-                as.updateBook(a);
+                bookDAO.update(a);
                 count++;
             }
         }
         return count;
     }
 
-    public static void printBooks() {
-        BookService as = new BookService();
+    public void printBooks() {
         System.out.println("\nAll Books:");
-        for (Book a : as.getAllBooks()) {
-            System.out.println("book: id=" + a.getId() + " Title="
+        for (Book a : bookDAO.getAll()) {
+            System.out.println("bookDAO: id=" + a.getId() + " Title="
                     + a.getName());
         }
     }
 
-    public static Book getBookById(int bookId) {
-        BookService as = new BookService();
-        return as.getBookById(bookId);
+    public Book getBookById(int bookDAOId) {
+        return bookDAO.findById(bookDAOId);
     }
 
-    public static void deleteBook(String book) {
-        BookService as = new BookService();
-        for (Book a : as.getAllBooks()) {
-            if (a.getName().equalsIgnoreCase(book)) {
-                as.deleteBook(a);
+    public void deleteBook(String name) {
+        for (Book a : bookDAO.getAll()) {
+            if (a.getName().equalsIgnoreCase(name)) {
+                bookDAO.remove(a);
                 break;
             }
         }

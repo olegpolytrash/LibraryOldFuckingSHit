@@ -1,6 +1,6 @@
 package com.soft.library.ui.Commands.DBCommands.AuthorCommands;
 
-import com.soft.library.DataBase.service.AdvAuthorService;
+import com.soft.library.dataBase.service.AdvAuthorService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -9,7 +9,8 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetAllAuthorsCommand implements ICommand {
     @Override
     public void execute() {
-        AdvAuthorService.printAuthors();
+        AdvAuthorService aas = new AdvAuthorService();
+        aas.printAuthors();
     }
 
     @Override

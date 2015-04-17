@@ -1,10 +1,5 @@
 package com.soft.library.ui.Commands.DBCommands.BookCommands;
 
-import java.util.Scanner;
-
-import com.soft.library.DataBase.data.Book;
-import com.soft.library.DataBase.service.AdvAuthorService;
-import com.soft.library.DataBase.service.AdvBookService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -14,9 +9,9 @@ public class InsertBookCommand implements ICommand {
 
     @Override
     public void execute() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Type in title: ");
-        AdvBookService.addBook(scanner.nextLine());
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Type in title: ");
+//        AdvBookService.addBook(scanner.nextLine());
     }
 
     @Override

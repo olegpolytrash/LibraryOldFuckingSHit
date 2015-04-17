@@ -3,8 +3,8 @@
  */
 package com.soft.library.DataBase.dao.Impl;
 
-import com.soft.library.DataBase.DBEntities.LibraryLogEntry;
-import com.soft.library.DataBase.dao.LibraryLogEntryDAO;
+import com.soft.library.dataBase.DBEntities.LibraryLogEntry;
+import com.soft.library.dataBase.dao.LibraryLogEntryDAO;
 
 /**
  * @author rd

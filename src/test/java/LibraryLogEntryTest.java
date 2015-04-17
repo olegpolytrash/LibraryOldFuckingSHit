@@ -1,4 +1,5 @@
-import com.soft.library.DataBase.DBEntities.LibraryLogEntry;
+import com.soft.library.dataBase.DBEntities.LibraryLogEntry;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

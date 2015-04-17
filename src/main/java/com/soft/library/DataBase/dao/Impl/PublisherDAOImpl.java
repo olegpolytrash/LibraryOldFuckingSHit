@@ -3,8 +3,8 @@
  */
 package com.soft.library.DataBase.dao.Impl;
 
-import com.soft.library.DataBase.DBEntities.Publisher;
-import com.soft.library.DataBase.dao.PublisherDAO;
+import com.soft.library.dataBase.DBEntities.Publisher;
+import com.soft.library.dataBase.dao.PublisherDAO;
 
 /**
  * @author rd

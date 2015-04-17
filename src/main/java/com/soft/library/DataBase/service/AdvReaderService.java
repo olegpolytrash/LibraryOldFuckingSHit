@@ -1,51 +1,52 @@
 package com.soft.library.DataBase.service;
 
-import com.soft.library.DataBase.DBEntities.Reader;
+import com.soft.library.dataBase.DBEntities.Reader;
+import com.soft.library.dataBase.dao.ReaderDAO;
+import com.soft.library.dataBase.dao.Impl.DaoFactory;
 
 public class AdvReaderService {
+    private ReaderDAO readerDAO;
 
-    public static void addReader(String title) {
-        Reader reader = new Reader();
-        reader.setName(title);
-        ReaderService as = new ReaderService();
-        as.addReader(reader);
+    public AdvReaderService() {
+        readerDAO = DaoFactory.getInstance().getReaderDAOImpl();
     }
 
-    public static int updateReaders(String oldName, String newName) {
-        ReaderService as = new ReaderService();
+    public void addReader(String title) {
+        Reader reader = new Reader();
+        reader.setName(title);
+        readerDAO.save(reader);
+    }
+
+    public int updateReaders(String oldName, String newName) {
         int count = 0;
-        for (Reader a : as.getAllReader()) {
+        for (Reader a : readerDAO.getAll()) {
             if (a.getName().equals(oldName)) {
                 a.setName(newName);
-                as.updateReader(a);
+                readerDAO.update(a);
                 count++;
             }
         }
         return count;
     }
 
-    public static void printReaders() {
-        ReaderService as = new ReaderService();
-        System.out.println("\nAll Books:");
-        for (Reader a : as.getAllReader()) {
-            System.out.println("reader: id=" + a.getId() + " Title="
+    public void printReaders() {
+        System.out.println("\nAll Readers:");
+        for (Reader a : readerDAO.getAll()) {
+            System.out.println("readerDAO: id=" + a.getId() + " Title="
                     + a.getName());
         }
     }
 
-    public static Reader getReaderById(int readerId) {
-        ReaderService as = new ReaderService();
-        return as.getReaderById(readerId);
+    public Reader getReaderById(int readerDAOId) {
+        return readerDAO.findById(readerDAOId);
     }
 
-    public static void deleteReader(String reader) {
-        ReaderService as = new ReaderService();
-        for (Reader a : as.getAllReader()) {
-            if (a.getName().equalsIgnoreCase(reader)) {
-                as.deleteReader(a);
+    public void deleteReader(String name) {
+        for (Reader a : readerDAO.getAll()) {
+            if (a.getName().equalsIgnoreCase(name)) {
+                readerDAO.remove(a);
                 break;
             }
         }
-
     }
 }

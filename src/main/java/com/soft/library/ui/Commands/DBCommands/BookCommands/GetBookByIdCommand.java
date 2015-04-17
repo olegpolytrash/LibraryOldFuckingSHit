@@ -2,7 +2,7 @@ package com.soft.library.ui.Commands.DBCommands.BookCommands;
 
 import java.util.Scanner;
 
-import com.soft.library.DataBase.service.AdvBookService;
+import com.soft.library.dataBase.service.AdvBookService;
 import com.soft.library.ui.CommandCore.ICommand;
 
 /**
@@ -11,10 +11,10 @@ import com.soft.library.ui.CommandCore.ICommand;
 public class GetBookByIdCommand implements ICommand {
     @Override
     public void execute() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter id: ");
-        int bookId = scanner.nextInt();
-        System.out.println(AdvBookService.getBookById(bookId).getName());
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter id: ");
+//        int bookId = scanner.nextInt();
+//        System.out.println(AdvBookService.getBookById(bookId).getName());
     }
 
     @Override
