@@ -1,17 +1,11 @@
-/**
- * 
- */
 package com.soft.library.DataBase.dao;
 
+import com.soft.library.DataBase.DBEntities.Book;
 import com.soft.library.DataBase.DBEntities.Reader;
 
 /**
- * @author rd
- *
+ * Created by Oleg on 17.04.2015.
  */
-public class ReaderDAO extends ElementDAOImpl<Reader> {
+public interface ReaderDAO extends BaseDao<Reader>{
 
-    public ReaderDAO() {
-        super(Reader.class);
-    }
 }

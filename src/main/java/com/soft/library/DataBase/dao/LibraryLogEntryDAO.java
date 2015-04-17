@@ -1,17 +1,11 @@
-/**
- * 
- */
 package com.soft.library.DataBase.dao;
 
+import com.soft.library.DataBase.DBEntities.Book;
 import com.soft.library.DataBase.DBEntities.LibraryLogEntry;
 
 /**
- * @author rd
- *
+ * Created by Oleg on 17.04.2015.
  */
-public class LibraryLogEntryDAO extends ElementDAOImpl<LibraryLogEntry> {
+public interface LibraryLogEntryDAO extends BaseDao<LibraryLogEntry>{
 
-    public LibraryLogEntryDAO() {
-        super(LibraryLogEntry.class);
-    }
 }

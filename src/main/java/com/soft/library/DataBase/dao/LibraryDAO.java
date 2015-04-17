@@ -1,17 +1,11 @@
-/**
- * 
- */
 package com.soft.library.DataBase.dao;
 
+import com.soft.library.DataBase.DBEntities.Book;
 import com.soft.library.DataBase.DBEntities.Library;
 
 /**
- * @author rd
- *
+ * Created by Oleg on 17.04.2015.
  */
-public class LibraryDAO extends ElementDAOImpl<Library> {
+public interface LibraryDAO extends BaseDao<Library>{
 
-    public LibraryDAO() {
-        super(Library.class);
-    }
 }
