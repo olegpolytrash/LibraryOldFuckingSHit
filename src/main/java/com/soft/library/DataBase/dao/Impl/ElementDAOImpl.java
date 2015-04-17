@@ -1,92 +1,56 @@
 package com.soft.library.dataBase.dao.impl;
 
 import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
-import com.soft.library.dataBase.dataBaseCore.SessionFactory;
 import com.soft.library.dataBase.dao.BaseDao;
+
+import javax.persistence.EntityManager;
 
 public class ElementDAOImpl<E> implements BaseDao<E> {
     private Class<E> elementClass;
 
-    public ElementDAOImpl(Class<E> elementClass) {
+    public ElementDAOImpl(Class<E> elementClass, EntityManager entityManager) {
         this.elementClass = elementClass;
+        this.entityManager = entityManager;
+    }
+
+    EntityManager entityManager;
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override
     public void save(E element) {
-        Session session = null;
-        try {
-            session = SessionFactory.INSTANCE.get().openSession();
-            Transaction transaction = session.beginTransaction();
-            session.save(element);
-            transaction.commit();
-        } finally {
-            if ((session != null) && (session.isOpen())) {
-                session.close();
-            }
-        }
+        entityManager.persist(element);
     }
 
     @Override
     public void update(E element) {
-        Session session = null;
-        try {
-            session = SessionFactory.INSTANCE.get().openSession();
-            Transaction transaction = session.beginTransaction();
-            session.update(element);
-            transaction.commit();
-        } finally {
-            if ((session != null) && (session.isOpen())) {
-                session.close();
-            }
-        }
+        entityManager.merge(element);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public E findById(int elementId) {
-        Session session = null;
         E element = null;
-        try {
-           session = SessionFactory.INSTANCE.get().openSession();
-           element = (E) session.get(elementClass, elementId);
-        } finally {
-            if ((session != null) && (session.isOpen())) {
-                session.close();
-        }    }
+        element = (E) entityManager.find(elementClass, elementId);
         return element;
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<E> getAll() {
-        Session session = null;
         List<E> elements;
-        try {
-           session = SessionFactory.INSTANCE.get().openSession();
-           elements = session.createCriteria(elementClass).list();
-        } finally {
-            if ((session != null) && (session.isOpen())) {
-                 session.close();
-         }   }
-         return elements;
+        elements = entityManager.createQuery("SELECT c FROM " + elementClass.getName() + " c").getResultList();
+        return elements;
     }
 
     @Override
     public void remove(E element) {
-        Session session = null;
-        try {
-            session = SessionFactory.INSTANCE.get().openSession();
-            Transaction transaction = session.beginTransaction();
-            session.delete(element);
-            transaction.commit();
-        } finally {
-             if ((session != null) && (session.isOpen())) {
-                  session.close();
-             }    
-        }
+        entityManager.remove(element);
     }
 }
